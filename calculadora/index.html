@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="index.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #corpo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #tela {
+            width: 270px;
+            height: 50px;
+            background-color: #333;
+            color: white;
+            text-align: right;
+            font-size: 2em;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #teclas {
+            display: grid;
+            grid-template-columns: repeat(4, 70px);
+            grid-gap: 10px;
+        }
+
+        .tecla {
+            width: 70px;
+            height: 70px;
+            font-size: 1.8em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tecla:hover {
+            background-color: #555;
+            transform: translateY(-3px);
+        }
+
+        .tecla:active {
+            background-color: #444;
+            transform: translateY(1px);
+        }
+
+        #igual {
+            background-color: #4CAF50;
+        }
+
+        #igual:hover {
+            background-color: #45a049;
+        }
+
+        #dividir, #multiplicar, #somar, #subtrair {
+            background-color: #2196F3;
+        }
+
+        #dividir:hover, #multiplicar:hover, #somar:hover, #subtrair:hover {
+            background-color: #1976D2;
+        }
+
+        #igual {
+            background-color: #4CAF50;
+        }
+
+        #igual:hover {
+            background-color: #45a049;
+        }
+
+        #teclas div {
+            transition: transform 0.2s ease-in-out;
+        }
+
+        /* Efeito para as teclas de operadores */
+        #dividir, #multiplicar, #somar, #subtrair {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        #dividir:hover, #multiplicar:hover, #somar:hover, #subtrair:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="corpo">
+        <div id="tela"></div>
+        <div id="teclas">
+            <div id="limpar" class="tecla" onclick="limpar()">C</div>
+            <div id="sete" class="tecla" onclick="adicionarTela('7')">7</div>
+            <div id="oito" class="tecla"onclick="adicionarTela('8')">8</div>
+            <div id="nove" class="tecla" onclick="adicionarTela('9')">9</div>
+            <div id="quatro" class="tecla" onclick="adicionarTela('4')">4</div>
+            <div id="cinco" class="tecla" onclick="adicionarTela('5')">5</div>
+            <div id="seis" class="tecla" onclick="adicionarTela('6')">6</div>
+            <div id="um" class="tecla" onclick="adicionarTela('1')">1</div>
+            <div id="dois" class="tecla" onclick="adicionarTela('2')">2</div>
+            <div id="tres" class="tecla" onclick="adicionarTela('3')">3</div>
+            <div id="zero" class="tecla" onclick="adicionarTela('0')">0</div>
+            <div id="dividir" class="tecla" onclick="adicionarTela('/')">/</div>
+            <div id="multiplicar" class="tecla" onclick="adicionarTela('*')">*</div>
+            <div id="somar" class="tecla" onclick="adicionarTela('+')">+</div>
+            <div id="subtrair" class="tecla" onclick="adicionarTela('-')">-</div>
+            <div id="igual" class="tecla" onclick="calculo()">=</div>
+        </div>
+    </div>
+    
+</body>
+</html>
